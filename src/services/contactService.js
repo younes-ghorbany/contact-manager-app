@@ -7,7 +7,11 @@ const SERVER_URL = "https://contactsapi.ghorbany.dev";
 // @route GET http://localhost:9000/contacts
 export const getAllContacts = () => {
   const url = `${SERVER_URL}/contacts`;
-  return axios.get(url);
+  return axios.get(url, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 };
 
 // @desc Get Contact With Contact ID
